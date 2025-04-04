@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en" class="theme-container">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Curriculum Vitae - Full Stack Developer</title>
+        
+        <!-- Preload theme to prevent screen flickering -->
+        <script>
+            const themeContainer = document.querySelector(".theme-container");
+            var theme = localStorage.getItem("theme");
+            if (theme == "dark") {
+                themeContainer.classList.add("dark");
+                document.documentElement.style.setProperty('color-scheme', 'dark');
+            } else if (theme == "light") {
+                themeContainer.classList.remove("dark");
+                document.documentElement.style.setProperty('color-scheme', 'light');
+            }
+        </script>
+        
+        <!-- Specific styles for CV page -->  
+        <link href="/css/style.css" rel="stylesheet">
+        <link href="/css/cv.css" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="/index.html">Best Practices</a></li>
+                    <li><a href="/cv.html" class="active">Curriculum Vitae</a></li>
+                </ul>
+                <div class="header-right">
+                    <a href="/cv-resume.html" class="resume-link">Resume</a>
+                    <button id="mode-toggle" class="mode-toggle">
+                        <img src="assets/images/sun.svg" alt="Light mode">
+                        <div class="toggle-track">
+                            <div class="toggle-thumb"></div>
+                        </div>
+                        <img src="assets/images/moon.svg" alt="Dark mode">
+                    </button>
+                </div>
+            </nav>
+        </header>
+    
+        <main class="cv-container">
+            <!-- Hero Section -->
+            <section class="hero">
+                <div class="hero-content">
+                    <img src="/assets/images/profile.PNG" alt="Profile Photo" class="profile-image">
+                    <div class="hero-text">
+                        <h1>Hi all, I'm Jinshu. </h1>
+                        <p class="subtitle">I am a Full Stack Software Engineer pursuing a Master’s in IT at UWA, passionate about problem-solving with experience in React and Node.js.<br /><br />
+                                            Currently focused on AI-driven development, I leverage AI to build intelligent and efficient solutions.</p>
+                    </div>
+                </div>
+                
+                <div class="social-links">
+                    <a href="https://github.com/" target="_blank" class="social-icon">
+                        <img src="assets/images/github.svg" alt="GitHub">
+                    </a>
+                    <a href="https://linkedin.com/" target="_blank" class="social-icon">
+                        <img src="assets/images/linkedin.svg" alt="LinkedIn">
+                    </a>
+                    <a href="mailto:contact@example.com" class="social-icon">
+                        <img src="assets/images/email.svg" alt="Email">
+                    </a>
+                </div>
+            </section>
+
+            <!-- Projects Section -->
+            <section class="projects-section">
+                <h2>Projects</h2>
+                
+                <div class="projects-grid">
+                    <!-- Task Management Application -->
+                    <div class="project-card" data-project="task-management">
+                        <div class="project-image">
+                            <img src="assets/images/taskmanagement.jpg" alt="Task Management Application">
+                        </div>
+                        <h3>Task Management Application</h3>
+                        <p>A task management application that allows users to efficiently create, organize, and track tasks.</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">MongoDB</span>
+                        </div>
+                        <a href="https://github.com/" target="_blank" class="github-link">
+                            <img src="assets/images/github.svg" alt="GitHub">
+                            View on GitHub
+                        </a>
+                    </div>
+
+                    <!-- Recipe Sharing Platform -->
+                    <div class="project-card" data-project="recipe-sharing">
+                        <div class="project-image">
+                            <img src="assets/images/recipe.jpg" alt="Recipe Sharing Platform">
+                        </div>
+                        <h3>Recipe Sharing Platform</h3>
+                        <p>A platform for users to share and discover recipes, featuring a dynamic recipe feed.</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">MongoDB</span>
+                        </div>
+                        <a href="https://github.com/" target="_blank" class="github-link">
+                            <img src="assets/images/github.svg" alt="GitHub">
+                            View on GitHub
+                        </a>
+                    </div>
+
+                    <!-- AI Chat Application -->
+                    <div class="project-card" data-project="ai-chat">
+                        <div class="project-image">
+                            <img src="assets/images/aichatbox.jpg" alt="AI Chat Application">
+                        </div>
+                        <h3>AI Chat Application</h3>
+                        <p>An AI chatbot application powered by OpenAI's GPT-3.5 API.</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">OpenAI</span>
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Node.js</span>
+                        </div>
+                        <a href="https://github.com/" target="_blank" class="github-link">
+                            <img src="assets/images/github.svg" alt="GitHub">
+                            View on GitHub
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Project Details Modals -->
+            <div class="project-details" id="task-management-modal">
+                <div class="project-details-content">
+                    <button class="project-details-close">&times;</button>
+                    <h2>Task Management Application</h2>
+                    <p>A task management application that allows users to efficiently create, organize, and track tasks. It features drag-and-drop functionality and a responsive design for improved user experience.</p>
+                    
+                    <div class="project-features">
+                        <h3>Key Features</h3>
+                        <ul>
+                            <li>Developed responsive UI using React 18 with Context API for global state management</li>
+                            <li>Integrated drag-and-drop functionality with react-beautiful-dnd for task organization</li>
+                            <li>Built RESTful API with Node.js and Express following MVC architecture</li>
+                            <li>Designed MongoDB schema with Mongoose for efficient data management and validation</li>
+                        </ul>
+                    </div>
+
+                    <div class="project-tech-stack">
+                        <h3>Tech Stack</h3>
+                        <div class="tech-tags">
+                            <span class="tech-tag">React 18</span>
+                            <span class="tech-tag">Context API</span>
+                            <span class="tech-tag">react-beautiful-dnd</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">Express</span>
+                            <span class="tech-tag">MongoDB</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-details" id="recipe-sharing-modal">
+                <div class="project-details-content">
+                    <button class="project-details-close">&times;</button>
+                    <h2>Recipe Sharing Platform</h2>
+                    <p>A platform for users to share and discover recipes, featuring a dynamic recipe feed and custom creation system with advanced search and filtering options.</p>
+                    
+                    <div class="project-features">
+                        <h3>Key Features</h3>
+                        <ul>
+                            <li>Developed responsive UI using React and CSS Modules</li>
+                            <li>Built interactive recipe creation system with drag-and-drop functionality</li>
+                            <li>Created RESTful API with Node.js and Express following MVC principles</li>
+                            <li>Integrated JWT authentication with social login options (Google, Facebook)</li>
+                            <li>Designed MongoDB schema with optimized indexes for search efficiency</li>
+                        </ul>
+                    </div>
+
+                    <div class="project-tech-stack">
+                        <h3>Tech Stack</h3>
+                        <div class="tech-tags">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">CSS Modules</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">Express</span>
+                            <span class="tech-tag">MongoDB</span>
+                            <span class="tech-tag">JWT</span>
+                            <span class="tech-tag">OAuth</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-details" id="ai-chat-modal">
+                <div class="project-details-content">
+                    <button class="project-details-close">&times;</button>
+                    <h2>AI-Powered Chat Application</h2>
+                    <p>An AI chatbot application powered by OpenAI's GPT-3.5/GPT-4 API, offering real-time, intelligent conversations with configurable personality and response branching.</p>
+                    
+                    <div class="project-features">
+                        <h3>Key Features</h3>
+                        <ul>
+                            <li>Integrated OpenAI GPT-3.5 API for conversational AI</li>
+                            <li>Implemented real-time streaming and error handling for a seamless user experience</li>
+                            <li>Built middleware for API request formatting and optimized response quality</li>
+                            <li>Created conversation context management and caching systems for performance optimization</li>
+                        </ul>
+                    </div>
+
+                    <div class="project-tech-stack">
+                        <h3>Tech Stack</h3>
+                        <div class="tech-tags">
+                            <span class="tech-tag">OpenAI API</span>
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">Express</span>
+                            <span class="tech-tag">WebSocket</span>
+                            <span class="tech-tag">Redis</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tech Stack Section: The tech stack section contains 2 parts: a scrolling container for icons and a categorized list of technologies -->
+            <section class="tech-stack-section">
+                <h2>Tech Stack</h2>               
+                <div class="tech-icons-container">
+                    <!-- The tech icons are displayed in a scrolling container for better visibility -->
+                    <div class="tech-icons-scroll">
+                        <!-- First row of tech icons -->
+                        <div class="tech-icon">
+                            <img src="assets/images/tech-icons/react.svg" alt="React">
+                        </div>
+                        <div class="tech-icon">
+                            <img src="assets/images/tech-icons/nodejs.svg" alt="Node.js">
+                        </div>
+                        <div class="tech-icon">
+                            <img src="/assets/images/tech-icons/python.svg" alt="Python">                       
+                        </div>
+                        <div class="tech-icon">
+                            <img src="assets/images/tech-icons/react.svg" alt="Next.js">                            
+                        </div>
+                        <div class="tech-icon">
+                            <img src="assets/images/tech-icons/nodejs.svg" alt="Express">                          
+                        </div>
+                        <div class="tech-icon">
+                            <img src="assets/images/tech-icons/python.svg" alt="Django">                      
+                        </div>
+                        <div class="tech-icon">
+                            <img src="assets/images/tech-icons/aws.svg" alt="AWS">                          
+                        </div>
+                        <div class="tech-icon">
+                            <img src="assets/images/tech-icons/csharp.svg" alt="C#">                         
+                        </div>
+                        <div class="tech-icon">
+                            <img src="assets/images/tech-icons/docker.svg" alt="Docker">                          
+                        </div>
+                        <div class="tech-icon">
+                            <img src="assets/images/tech-icons/linux.svg" alt="Linux">                          
+                        </div>
+                        <div class="tech-icon">
+                            <img src="assets/images/tech-icons/tailwindcss.svg" alt="TailwindCSS">                      
+                        </div>
+                    </div>
+                    <div class="tech-icons-scroll">
+                        <!-- Duplicate for seamless scrolling -->
+                        <div class="tech-icon">
+                            <img src="assets/images/tech-icons/react.svg" alt="React">  
+                        </div>
+                        <div class="tech-icon">
+                            <img src="assets/images/tech-icons/nodejs.svg" alt="Node.js">
+                        </div>
+                        <div class="tech-icon">
+                            <img src="assets/images/tech-icons/python.svg" alt="Python">
+                        </div>
+                        <div class="tech-icon">
+                            <img src="assets/images/tech-icons/react.svg" alt="Next.js">
+                        </div>
+                        <div class="tech-icon">
+                            <img src="assets/images/tech-icons/nodejs.svg" alt="Express">
+                        </div>
+                        <div class="tech-icon">
+                            <img src="assets/images/tech-icons/python.svg" alt="Django">
+                        </div>
+                        <div class="tech-icon">
+                            <img src="assets/images/tech-icons/aws.svg" alt="AWS">
+                        </div>
+                        <div class="tech-icon">
+                            <img src="assets/images/tech-icons/csharp.svg" alt="C#">
+                        </div>
+                        <div class="tech-icon">
+                            <img src="assets/images/tech-icons/docker.svg" alt="Docker">
+                        </div>
+                        <div class="tech-icon">
+                            <img src="assets/images/tech-icons/linux.svg" alt="Linux">
+                        </div>
+                        <div class="tech-icon">
+                            <img src="assets/images/tech-icons/mongodb.svg" alt="MongoDB">
+                        </div>
+                        <div class="tech-icon">
+                            <img src="assets/images/tech-icons/tailwindcss.svg" alt="TailwindCSS">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tech-categories">
+                    <!-- The tech stack is categorized into Frontend, Backend, DevOps, and Tools --> 
+                    <div class="tech-category">
+                        <h3>Frontend</h3>
+                        <div class="tech-pills">
+                            <span class="tech-pill">
+                                <img src="assets/images/tech-icons/react.svg" alt="React">
+                                React
+                            </span>
+                            <span class="tech-pill">
+                                <img src="assets/images/tech-icons/react.svg" alt="Next.js">
+                                Next.js
+                            </span>
+                            <span class="tech-pill">
+                                <img src="assets/images/tech-icons/tailwindcss.svg" alt="TailwindCSS">
+                                TailwindCSS
+                            </span>
+                            <span class="tech-pill">
+                                <img src="assets/images/tech-icons/redux.svg" alt="Redux">
+                                Redux
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="tech-category">
+                        <h3>Backend</h3>
+                        <div class="tech-pills">
+                            <span class="tech-pill">
+                                <img src="assets/images/tech-icons/nodejs.svg" alt="Node.js">
+                                Node.js
+                            </span>
+                            <span class="tech-pill">
+                                <img src="assets/images/tech-icons/nodejs.svg" alt="Express">
+                                Express
+                            </span>
+                            <span class="tech-pill">
+                                <img src="assets/images/tech-icons/csharp.svg" alt="C#">
+                                C#
+                            </span>
+                            <span class="tech-pill">
+                                <img src="assets/images/tech-icons/dotnet.svg" alt=".NET">
+                                .NET
+                            </span>
+                            <span class="tech-pill">
+                                <img src="assets/images/tech-icons/python.svg" alt="Python">
+                                Python
+                            </span>
+                            <span class="tech-pill">
+                                <img src="assets/images/tech-icons/python.svg" alt="Django">
+                                Django
+                            </span>
+                            <span class="tech-pill">
+                                <img src="assets/images/tech-icons/sql.svg" alt="SQL">
+                                SQL
+                            </span>
+                            <span class="tech-pill">
+                                <img src="assets/images/tech-icons/mongodb.svg" alt="MongoDB">
+                                MongoDB
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <div class="tech-category">
+                        <h3>DevOps</h3>
+                        <div class="tech-pills">
+                            <span class="tech-pill">
+                                <img src="assets/images/tech-icons/docker.svg" alt="Docker">
+                                Docker
+                            </span>
+                            <span class="tech-pill">
+                                <img src="assets/images/tech-icons/aws.svg" alt="AWS">
+                                AWS
+                            </span>
+                            <span class="tech-pill">
+                                <img src="assets/images/tech-icons/ci:cd.svg" alt="CI/CD">
+                                CI/CD
+                            </span>
+                            <span class="tech-pill">
+                                <img src="assets/images/tech-icons/linux.svg" alt="Linux">
+                                Linux
+                            </span>
+                            <span class="tech-pill">
+                                <img src="assets/images/tech-icons/nginx.svg" alt="Nginx">
+                                Nginx
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <div class="tech-category">
+                        <h3>Tools</h3>
+                        <div class="tech-pills">
+                            <span class="tech-pill">
+                                <img src="assets/images/tech-icons/github.svg" alt="GitHub">
+                                GitHub
+                            </span>
+                            <span class="tech-pill">
+                                <img src="assets/images/tech-icons/figma.svg" alt="Figma">
+                                Figma
+                            </span>
+                            <span class="tech-pill">
+                                <img src="assets/images/tech-icons/appwrite.svg" alt="Appwrite">
+                                Appwrite
+                            </span>
+                            <span class="tech-pill">
+                                <img src="assets/images/tech-icons/restapi.svg" alt="RESTful API">
+                                RESTful API
+                            </span>
+                            <span class="tech-pill">
+                                <img src="assets/images/tech-icons/vercel.svg" alt="Vercel">
+                                Vercel
+                            </span>
+                            <span class="tech-pill">
+                                <img src="assets/images/tech-icons/heroku.svg" alt="HeroKu">
+                                HeroKu
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact" class="contact-section">
+                <div class="contact-container">
+                    <h2 class="contact-title">Get in touch</h2>
+                    <form class="contact-form">
+                        <div class="form-group">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" id="name" class="form-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" id="email" class="form-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea id="message" class="form-textarea" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-button">Send Message</button>
+                    </form>
+                </div>
+            </section>
+
+            <!-- Reference Section -->
+            <section id="reference" class="reference-section">
+                <div class="reference-container">
+                    <h6 class="contact-title" style="text-align: left;">References</h6>
+                <p>	1. v0.dev. (n.d.). Glow menu component. Retrieved April 1, 2025, from https://v0.dev/chat/community/glow-menu-component-XqrIezRilBR <br />
+                    2. v0.dev. (n.d.). Vercel tabs. Retrieved April 1, 2025, from https://v0.dev/chat/community/vercel-tabs-BT27p0aGPsa <br />
+                    3. Unsplash. (n.d.). Unsplash. Retrieved April 1, 2025, from https://unsplash.com/ <br />
+                    4. Revolut. (n.d.). Revolut. Retrieved April 1, 2025, from https://www.revolut.com/en-AU/ <br />
+                    5. SVGRepo. (n.d.). SVGRepo: Free SVG vectors and icons. Retrieved April 1, 2025, from https://www.svgrepo.com/ <br />
+                    6. Bostian, E. (2021). Developer portfolios. GitHub. Retrieved April 1, 2025, from https://github.com/emmabostian/developer-portfolios?tab=readme-ov-file <br />
+                    7. OpenAI. ChatGPT (Version GPT-4) [Large language model]. OpenAI. Retrieved April 4, 2025, from https://chat.openai.com</p>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <p>&copy; CITS5505 Individual Project</p>
+            </div>
+        </footer>
+
+        <!-- Back to Top Button -->
+        <button class="back-to-top" aria-label="Back to top">
+            <svg src="assets/images/up.svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 15l-6-6-6 6"/>
+            </svg>
+        </button>
+
+        <script src="js/dark-mode.js"></script>
+        <script src="js/nav-indicator.js"></script>
+        <script src="js/cv.js"></script>
+    </body>
+</html>

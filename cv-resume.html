@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en" class="theme-container">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume - Full Stack Developer</title>
+    
+    <!-- Preload theme to prevent screen flickering -->
+    <script>
+        const themeContainer = document.querySelector(".theme-container");
+        var theme = localStorage.getItem("theme");
+        if (theme == "dark") {
+            themeContainer.classList.add("dark");
+            document.documentElement.style.setProperty('color-scheme', 'dark');
+        } else if (theme == "light") {
+            themeContainer.classList.remove("dark");
+            document.documentElement.style.setProperty('color-scheme', 'light');
+        }
+    </script>
+    
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/cv.css" rel="stylesheet">
+    <style>
+        /* Specific styles for resume page */
+        .resume-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+            padding-top: calc(var(--header-height) + 2rem);
+        }
+        
+        .resume-heading {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .resume-section {
+            margin-bottom: 2.5rem;
+        }
+        
+        .resume-section h2 {
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .resume-heading h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .resume-heading .contact-info {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1.5rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .contact-item img {
+            width: 16px;
+            height: 16px;
+            filter: brightness(0.2);
+        }
+        
+        body.dark-mode .contact-item img {
+            filter: brightness(0.9);
+        }
+        
+        .resume-item {
+            margin-bottom: 1.5rem;
+        }
+        
+        .resume-item .title {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+        
+        .resume-item h3 {
+            margin: 0;
+        }
+        
+        .resume-item .date {
+            color: var(--secondary-color);
+        }
+        
+        .resume-item .subtitle {
+            font-style: italic;
+            margin-bottom: 0.5rem;
+            color: var(--secondary-color);
+        }
+        
+        .resume-item ul {
+            margin-top: 0.5rem;
+            padding-left: 1.5rem;
+        }
+        
+        .resume-item li {
+            margin-bottom: 0.25rem;
+        }
+        
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+        
+        .skill-badge {
+            background-color: rgba(0,0,0,0.05);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+        }
+        
+        body.dark-mode .skill-badge {
+            background-color: rgba(255,255,255,0.1);
+        }
+        
+        .download-btn {
+            display: block;
+            width: 200px;
+            margin: 2rem auto;
+            text-align: center;
+            padding: 0.75rem 1rem;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        @keyframes fadeInBounce {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            50% {
+                opacity: 1;
+                transform: translateY(-10px);
+            }
+            70% {
+                transform: translateY(5px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px var(--shadow-color);
+        }
+        
+        body.dark-mode .download-btn {
+            background-color: #f5f5f5;
+            color: #1a1a1a;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Best Practices</a></li>
+                <li><a href="cv.html">Curriculum Vitae</a></li>
+            </ul>
+            <div class="header-right">
+                <a href="resume.html" class="resume-link active">Resume</a>
+                <button id="mode-toggle" class="mode-toggle">
+                    <img src="assets/images/sun.svg" alt="Light mode">
+                    <div class="toggle-track">
+                        <div class="toggle-thumb"></div>
+                    </div>
+                    <img src="assets/images/moon.svg" alt="Dark mode">
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="resume-container">
+        <div class="resume-heading">
+            <h1>Jocelyn (Jinshu) Zhang</h1>
+            <p>Full Stack Developer with a passion for creating elegant solutions</p>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <img src="assets/images/email.svg" alt="Email">
+                    <span>contact@example.com</span>
+                </div>
+                <div class="contact-item">
+                    <img src="assets/images/github.svg" alt="GitHub">
+                    <span>github.com/username</span>
+                </div>
+                <div class="contact-item">
+                    <img src="assets/images/linkedin.svg" alt="LinkedIn">
+                    <span>linkedin.com/in/username</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Add sections for Experience, Projects, Education, and Skills -->
+        <section class="resume-section">
+            <h2>Experience</h2>
+            
+            <div class="resume-item">
+                <div class="title">
+                    <h3>Operations Project Manager Intern</h3>
+                    <span class="date">Jan 2022 - Mar 2022</span>
+                </div>
+                <div class="subtitle">Greater China Youth Exchange Centre</div>
+                <ul>
+                    <li>Support senior project managers in coordinating Full Stack development tasks, ensuring smooth communication across teams.</li>
+                    <li>Assist in Agile (Scrum) meetings, preparing sprints and backlog items, ensuring tasks are prioritized correctly.</li>
+                    <li>Help monitor CI/CD pipelines, track deployment schedules, and report on potential delays.</li>
+                    <li>Assist with managing cloud infrastructure resources on AWS (EC2, S3, Lambda) in coordination with DevOps.</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section class="resume-section">
+            <h2>Project</h2>
+            
+            <div class="resume-item">
+                <div class="title">
+                    <h3>AI Chat Application</h3>
+                    <span class="date">Feb 2025 - Current</span>
+                </div>
+                <ul>
+                    <li>Integrated OpenAI GPT-3.5 API for conversational AI</li>
+                    <li>Implemented real-time streaming and error handling for a seamless user experience</li>
+                    <li>Built middleware for API request formatting and optimized response quality</li>
+                    <li>Created conversation context management and caching systems for performance optimization</li>
+                <ul>
+            </div>
+        </section>
+
+        <section class="resume-section">
+            <h2>Education</h2>
+            
+            <div class="resume-item">
+                <div class="title">
+                    <h3>Master of Information Technology</h3>
+                    <span class="date">July 2023 - Current</span>
+                </div>
+                <div class="subtitle">The University of Western Australia</div>
+            </div>
+        </section>
+        
+        <section class="resume-section">
+            <h2>Skills</h2>
+            
+            <div class="skills-list">
+                <span class="skill-badge">JavaScript</span>
+                <span class="skill-badge">TypeScript</span>
+                <span class="skill-badge">React</span>
+                <span class="skill-badge">Next.js</span>
+                <span class="skill-badge">Node.js</span>
+                <span class="skill-badge">Python</span>
+                <span class="skill-badge">Django</span>
+                <span class="skill-badge">GraphQL</span>
+                <span class="skill-badge">RESTful APIs</span>
+                <span class="skill-badge">PostgreSQL</span>
+                <span class="skill-badge">MongoDB</span>
+                <span class="skill-badge">Docker</span>
+                <span class="skill-badge">AWS</span>
+                <span class="skill-badge">CI/CD</span>
+                <span class="skill-badge">Git</span>
+                <span class="skill-badge">TailwindCSS</span>
+            </div>
+        </section>
+        
+        <a href="#" class="download-btn">Download PDF Version</a>
+    </main>
+
+    <footer>
+        <p>&copy; CITS5505 Individual Project</p>
+        <a href="cv.html" class="resume-button">Back to Portfolio</a>
+    </footer>
+
+    <script src="js/dark-mode.js"></script>
+    <script src="js/nav-indicator.js"></script>
+</body>
+</html> 

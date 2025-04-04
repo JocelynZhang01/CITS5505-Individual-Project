@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" class="theme-container">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Development Best Practices Checker</title>
+    
+    <!-- Preload theme to prevent screen flickering -->
+    <script>
+        const themeContainer = document.querySelector(".theme-container");
+        var theme = localStorage.getItem("theme");
+        if (theme == "dark") {
+            themeContainer.classList.add("dark");
+            document.documentElement.style.setProperty('color-scheme', 'dark');
+        } else if (theme == "light") {
+            themeContainer.classList.remove("dark");
+            document.documentElement.style.setProperty('color-scheme', 'light');
+        }
+    </script>
+    
+    <!-- Specific styles for index page -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/index.html" class="active">Best Practices</a></li>
+                <li><a href="/cv.html">Curriculum Vitae</a></li>
+            </ul>
+            <div class="header-right">
+                <button id="mode-toggle" class="mode-toggle">
+                    <img src="assets/images/sun.svg" alt="Light mode">
+                    <div class="toggle-track">
+                        <div class="toggle-thumb"></div>
+                    </div>
+                    <img src="assets/images/moon.svg" alt="Dark mode">
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div id="progress-sticky" class="sticky-progress">
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+                <div class="progress-stats">
+                    <p>Completed: <span id="completed-count">0</span>/15</p>
+                    <p>Progress: <span id="progress-percentage">0</span>%</p>
+                </div>
+            </div>
+        </div>
+
+        <h1>Web Development Best Practices Checklist</h1>
+        
+        <div id="practices-container">
+            <!-- Best practices list will be dynamically added here via JavaScript -->
+        </div>
+
+        <div id="success-message" style="display: none;">
+            <button id="success-close">&times;</button>
+            <h3>Congratulations!</h3>
+            <p>You've mastered web development best practices!</p>
+            <img id="reward-image" alt="Reward image" style="max-width: 300px;">
+            <div id="fireworks-container"></div>
+        </div>
+    </main>
+
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar-nav">
+        <h3 class="sidebar-title">Quick Navigation</h3>
+        <ul class="sidebar-links" id="sidebar-links">
+            <!-- Links will be dynamically added by JavaScript -->
+        </ul>
+    </aside>
+
+    <footer>
+        <p>&copy; CITS5505 Individual Project</p>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" aria-label="Back to top">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 15l-6-6-6 6"/>
+        </svg>
+    </button>
+
+    <script src="js/dark-mode.js"></script>
+    <script src="js/practices.js"></script>
+    <script src="js/nav-indicator.js"></script>
+</body>
+</html> 
